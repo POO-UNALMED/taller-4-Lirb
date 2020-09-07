@@ -3,25 +3,30 @@ package classroom;
 public class Asignatura {
 
     String nombre;
-    String n = nombre;
     int codigoInterno;
     int codigoExterno;
 
     Asignatura() {
-        this("Sin nombre");
-        this(0);
-    }
-
-    Asignatura(int codigoInterno) {
-        this("Sin nombre", codigoInterno, 0);
+        this.nombre= "Sin nombre";
+        this.codigoExterno = 0;
     }
 
     Asignatura(int codigoExterno) {
-        this("Sin nombre", 0, codigoExterno);
+        this.nombre = "Sin nombre";
+        this.codigoInterno = 0;
+        this.codigoExterno = codigoExterno;
+    }
+
+    Asignatura(double codigoExterno) {
+        this.nombre ="Sin nombre";
+        this.codigoInterno= 0;
+        this.codigoExterno = (int) codigoExterno;
     }
 
     Asignatura(String nombre) {
-        this(nombre, 0, 0);
+        this.nombre=nombre;
+        this.codigoExterno= 0;
+        this.codigoInterno= 0;
     }
 
     Asignatura(String nombre, int codigoInterno, int codigoExterno) {
@@ -36,12 +41,12 @@ public class Asignatura {
         this.nombre = nombre;
     }
 
-    void cambiarDatos(int codigoInterno) {
-        this.codigoInterno = codigoInterno;
-    }
-
     void cambiarDatos(int codigoExterno) {
         this.codigoExterno = codigoExterno;
+    }
+
+    void cambiarDatos(double codigoExterno) {
+        this.codigoExterno = (int) codigoExterno;
     }
 
     void cambiarDatos(String nombre) {
